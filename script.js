@@ -20,7 +20,7 @@ const perguntas = [
     },
     {
         enunciado: " voce acompanha algum esporte?",
-        alternativas: "futebol,basqute e deve enquando volei"
+        alternativas: "futebol,basqute e volei"
             {
                 texto: "tem uma rotina adequada, para manter seu fisico",
                 afirmacao: "fazer academia pelo menos tres vezes na semana"
