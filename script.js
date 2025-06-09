@@ -6,72 +6,71 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "voce gosta de jogar algum tipo de esporte na escola?",
-        alternativas: "do 6 ano ate o 9 ano do ensino fundamental jogava tenis de mesa "
-            {
-                texto: "Isso é assustador!",
-                afirmacao: "No início ficou com meus amigos  "
-            },
-            {
-                texto: "Isso é maravilhoso!",
-                afirmacao: "Quis saber como usar."
-            }
-        ]
-    },
-    {
-        enunciado: " voce acompanha algum esporte?",
-        alternativas: "futebol,basqute e volei"
-            {
-                texto: "tem uma rotina adequada, para manter seu fisico",
-                afirmacao: "fazer academia pelo menos tres vezes na semana"
-            },
-            {
-                texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "Sentiu mais facilidade em utilizar seus próprios recursos para escrever seu trabalho."
-            }
-        ]
-    },
-    {
-        enunciado: "Após a elaboração do trabalho escrito, a professora realizou um debate entre a turma para entender como foi realizada a pesquisa e escrita. Nessa conversa também foi levantado um ponto muito importante: como a IA impacta o trabalho do futuro. Nesse debate, como você se posiciona?",
+        enunciado: "Você costuma jogar futebol com frequência?",
         alternativas: [
             {
-                texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "Vem impulsionando a inovação na área de IA e luta para abrir novos caminhos profissionais com IA."
+                texto: "Sim, jogo toda semana com amigos.",
+                afirmacao: "Mantém uma rotina ativa e usa o futebol como forma de se divertir e manter a saúde."
             },
             {
-                texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "Sua preocupação com as pessoas motivou a criar um grupo de estudos entre trabalhadores para discutir meios de utilização de IA de forma ética."
+                texto: "Não, raramente jogo futebol.",
+                afirmacao: "Prefere acompanhar futebol de forma mais tranquila, sem praticar com frequência."
             }
         ]
     },
     {
-        enunciado: "Ao final da discussão, você precisou criar uma imagem no computador que representasse o que pensa sobre IA. E agora?",
+        enunciado: "Qual sua posição preferida em campo?",
         alternativas: [
             {
-                texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "Notou também que muitas pessoas não sabem ainda utilizar as ferramentas tradicionais e decidiu compartilhar seus conhecimentos de design utilizando ferramentas de pintura digital para iniciantes."
+                texto: "Goleiro ou zagueiro.",
+                afirmacao: "Gosta de proteger o time e manter a defesa segura, sendo uma peça-chave na retaguarda."
             },
             {
-                texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "Acelerou o processo de criação de trabalhos utilizando geradores de imagem e agora consegue ensinar pessoas que sentem dificuldades em desenhar manualmente como utilizar também!"
+                texto: "Atacante ou meio-campista.",
+                afirmacao: "Prefere estar no centro da ação, criando jogadas e buscando o gol a todo momento."
             }
         ]
     },
     {
-        enunciado: "Você tem um trabalho em grupo de biologia para entregar na semana seguinte, o andamento do trabalho está um pouco atrasado e uma pessoa do seu grupo decidiu fazer com ajuda da IA. O problema é que o trabalho está totalmente igual ao do chat. O que você faz? ",
+        enunciado: "Você costuma assistir aos jogos de futebol?",
         alternativas: [
             {
-                texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "Infelizmente passou a utilizar a IA para fazer todas suas tarefas e agora se sente dependente da IA para tudo."
+                texto: "Sim, acompanho campeonatos e jogos da seleção.",
+                afirmacao: "É apaixonado por futebol e está sempre ligado nas competições e nos grandes momentos do esporte."
             },
             {
-                texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "Percebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado final. "
+                texto: "Não assisto muito, só quando alguém me chama.",
+                afirmacao: "Assiste casualmente, mais para interagir com os amigos e a família."
             }
         ]
     },
+    {
+        enunciado: "O que você acha do uso da tecnologia no futebol (como o VAR)?",
+        alternativas: [
+            {
+                texto: "Acho importante, ajuda a tornar o jogo mais justo.",
+                afirmacao: "Acredita que a tecnologia contribui para decisões mais corretas e jogos mais equilibrados."
+            },
+            {
+                texto: "Tira a emoção do jogo e atrasa demais.",
+                afirmacao: "Prefere um futebol mais tradicional, mesmo com possíveis erros, em nome da emoção e fluidez do jogo."
+            }
+        ]
+    },
+    {
+        enunciado: "Se você pudesse ser um jogador profissional, qual seria seu maior sonho?",
+        alternativas: [
+            {
+                texto: "Jogar pela seleção e disputar uma Copa do Mundo.",
+                afirmacao: "Tem um espírito patriota e sonha em representar o país no maior palco do futebol mundial."
+            },
+            {
+                texto: "Jogar em um grande clube europeu e ganhar a Champions League.",
+                afirmacao: "Sonha alto e deseja alcançar o sucesso nos maiores clubes do mundo."
+            }
+        ]
+    }
 ];
-
 
 let atual = 0;
 let perguntaAtual;
@@ -88,8 +87,8 @@ function mostraPergunta() {
     mostraAlternativas();
 }
 
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas) {
+function mostraAlternativas() {
+    for (const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
@@ -98,16 +97,13 @@ function mostraAlternativas(){
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
+    historiaFinal += opcaoSelecionada.afirmacao + " ";
     atual++;
     mostraPergunta();
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent = historiaFinal;
+    caixaPerguntas.textContent = "Seu perfil no mundo do futebol:";
+    textoResultado.textContent = historiaFinal.trim();
     caixaAlternativas.textContent = "";
 }
-
-mostraPergunta();
